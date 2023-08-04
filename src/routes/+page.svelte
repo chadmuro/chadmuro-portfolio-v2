@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { techstack_badges, contact_badges } from '$lib/data/badges';
 	import Article from '$lib/components/article/index.svelte';
+	import Project from '$lib/components/project/index.svelte';
+	import { projects } from '$lib/data/projects.js';
 
 	export let data;
-	console.log(data.posts);
 </script>
 
 <header class="flex h-16 items-center">
@@ -22,7 +23,7 @@
 				<h1 class="pb-4">Hi, my name is Chad 🤙</h1>
 				<p>
 					I'm a Software Engineer born and raised in Hawaii, and currently living in Tokyo, Japan. I
-					enjoy building user-friendly websites and applications.
+					enjoy building <span id="user-friendly">user-friendly</span> websites and applications.
 				</p>
 			</div>
 			<div class="flex-1">
@@ -43,18 +44,17 @@
 	</section>
 
 	<section class="py-4" id="side-projects">
-		<h2 class="pb-2">side projects</h2>
-		<h3>Mainichi Habits</h3>
-
-		<h3>NBA HotTakes</h3>
-
-		<h3>BW Images</h3>
-
-		<h3>AWS CCP Practice</h3>
+		<!-- h2 pb-2 from project card -->
+		<h2>side projects</h2>
+		<div>
+			{#each projects as project}
+				<Project {project} />
+			{/each}
+		</div>
 	</section>
 
 	<section class="py-4" id="articles">
-		<!-- pb-2 from article card -->
+		<!-- h2 pb-2 from article card -->
 		<h2>articles</h2>
 		{#each data.posts as article, index}
 			{#if index < 5}
