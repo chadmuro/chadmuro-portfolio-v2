@@ -10,7 +10,7 @@
 <header class="flex h-16 items-center">
 	<nav>
 		<ul class="flex gap-8">
-			<li><a href="#top" class="hover:underline">top</a></li>
+			<li><a href="/" class="hover:underline">top</a></li>
 			<li><a href="#side-projects" class="hover:underline">side projects</a></li>
 			<li><a href="#articles" class="hover:underline">articles</a></li>
 		</ul>
@@ -22,8 +22,10 @@
 			<div>
 				<h1 class="pb-4">Hi, my name is Chad 🤙</h1>
 				<p>
-					I'm a Software Engineer born and raised in Hawaii, and currently living in Tokyo, Japan. I
-					enjoy building <span id="user-friendly">user-friendly</span> websites and applications.
+					I'm a Software Engineer born and raised in Hawaii, and currently living in Tokyo, Japan
+					🇯🇵. I enjoy building <span class="border-b-2 border-green-300 border-dashed"
+						>user-friendly</span
+					> web and mobile applications.
 				</p>
 			</div>
 			<div class="flex-1">
