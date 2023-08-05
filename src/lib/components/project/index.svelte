@@ -6,7 +6,14 @@
 </script>
 
 <article class="flex flex-col gap-1">
-	<h3>{project.title}</h3>
+	<h3 class="text-xl">
+		<a
+			class="text-green-300 hover:text-green-500"
+			href={project.link}
+			target="_blank"
+			rel="noopener noreferrer">{project.title}</a
+		>
+	</h3>
 	{#if project.appstore_link}
 		<AppStoreButton link={project.appstore_link} />
 	{/if}
@@ -45,7 +52,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			class="flex gap-2 items-center bg-gray-600 rounded px-2 py-1 hover:bg-gray-700"
-			>GitHub<svg
+			>Source code<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"

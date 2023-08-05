@@ -45,6 +45,21 @@
 		</div>
 	</section>
 
+	<section class="py-8">
+		<h2 class="pb-2">certifications</h2>
+		<ul>
+			<li>
+				<a
+					class="text-green-300 hover:text-green-500"
+					href="https://www.credly.com/badges/918a8ea5-b1a6-4d35-a747-3d882c6eb657"
+					target="_blank"
+					rel="noopener noreferrer">AWS Certified Cloud Practitioner (2022)</a
+				>
+			</li>
+			<li>Japanese Language Proficiency Test N3 (2018)</li>
+		</ul>
+	</section>
+
 	<section class="py-8" id="side-projects">
 		<h2 class="pb-2">side projects</h2>
 		<div class="flex flex-col gap-8">
