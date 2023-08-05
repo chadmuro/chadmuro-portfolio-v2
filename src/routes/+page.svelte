@@ -1,10 +1,13 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { techstack_badges, contact_badges } from '$lib/data/badges';
 	import Article from '$lib/components/article/index.svelte';
 	import Project from '$lib/components/project/index.svelte';
 	import { projects } from '$lib/data/projects.js';
 
 	export let data;
+	export let form;
+	$: console.log(form);
 </script>
 
 <header class="flex h-16 items-center">
@@ -83,12 +86,44 @@
 
 	<section class="py-8">
 		<h2 class="pb-2">contact</h2>
-		<div class="flex flex-wrap gap-2">
+		<div class="flex flex-wrap gap-2 pb-2">
 			{#each contact_badges as badge}
 				<a href={badge.url} target="_blank" rel="noopener noreferrer"
 					><img alt={badge.name} src={badge.src} /></a
 				>
 			{/each}
 		</div>
+		<form use:enhance method="POST" class="flex flex-col gap-2">
+			<label class="flex flex-col">
+				Name: <input
+					class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
+					type="text"
+					required
+					name="name"
+					id="name"
+				/>
+			</label>
+			<label class="flex flex-col">
+				Email: <input
+					class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
+					type="email"
+					required
+					name="email"
+					id="email"
+				/>
+			</label>
+			<label class="flex flex-col">
+				Message: <textarea
+					class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
+					rows={4}
+					required
+					name="message"
+					id="message"
+				/>
+			</label>
+			<button type="submit" class="bg-green-300 rounded py-2 px-4 w-fit text-gray-800"
+				>Send message</button
+			>
+		</form>
 	</section>
 </main>
