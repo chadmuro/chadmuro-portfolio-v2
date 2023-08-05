@@ -17,7 +17,7 @@
 	</nav>
 </header>
 <main class="flex-1 mx-auto justify-center">
-	<section class="py-4" id="top">
+	<section class="py-8" id="top">
 		<div class="flex gap-4 flex-col sm:flex-row">
 			<div>
 				<h1 class="pb-4">Hi, my name is Chad 🤙</h1>
@@ -36,7 +36,7 @@
 		</div>
 	</section>
 
-	<section class="py-4">
+	<section class="py-8">
 		<h2 class="pb-2">tech stack</h2>
 		<div class="flex flex-wrap gap-2">
 			{#each techstack_badges as badge}
@@ -45,27 +45,28 @@
 		</div>
 	</section>
 
-	<section class="py-4" id="side-projects">
-		<!-- h2 pb-2 from project card -->
-		<h2>side projects</h2>
-		<div>
+	<section class="py-8" id="side-projects">
+		<h2 class="pb-2">side projects</h2>
+		<div class="flex flex-col gap-8">
 			{#each projects as project}
 				<Project {project} />
 			{/each}
 		</div>
 	</section>
 
-	<section class="py-4" id="articles">
+	<section class="py-8" id="articles">
 		<!-- h2 pb-2 from article card -->
-		<h2>articles</h2>
-		{#each data.posts as article, index}
-			{#if index < 5}
-				<Article {article} />
-			{/if}
-		{/each}
+		<h2 class="pb-2">articles</h2>
+		<div class="flex flex-col gap-4">
+			{#each data.posts as article, index}
+				{#if index < 5}
+					<Article {article} />
+				{/if}
+			{/each}
+		</div>
 	</section>
 
-	<section class="py-4">
+	<section class="py-8">
 		<h2 class="pb-2">contact</h2>
 		<div class="flex flex-wrap gap-2">
 			{#each contact_badges as badge}

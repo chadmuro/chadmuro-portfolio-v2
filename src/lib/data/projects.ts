@@ -4,7 +4,7 @@ export const projects = [
 		title: 'Mainichi Habits',
 		description:
 			'My first mobile app built with React Native, Expo, and TypeScript. It is currently available to download for free on the App Store. This app will help you build and track your daily and weekly habits.',
-		main_image: '/',
+		main_image: '/projects/mainichi_habits.png',
 		link: 'https://mainichi-habits.vercel.app/',
 		appstore_link: 'https://apps.apple.com/app/mainichi-habits/id6451048200',
 		github: 'https://github.com/chadmuro/mainichi-habits',
@@ -15,7 +15,7 @@ export const projects = [
 		title: 'NBA Hot Takes',
 		description:
 			'There is nothing I love more than following the NBA and hearing ridiculous takes. I created this app for all NBA lovers to share their hottest takes.',
-		main_image: '/',
+		main_image: '/projects/nba_hottakes.png',
 		link: 'https://nba-hottakes.vercel.app/',
 		appstore_link: '',
 		github: 'https://github.com/chadmuro/nba-hottakes',
@@ -26,7 +26,7 @@ export const projects = [
 		title: 'AWS CCP Practice',
 		description:
 			'This is a simple quiz app I built to help me study for the AWS Certified Cloud Practicioner exam. It was my first time playing around and experimenting with Svelte. It turned out to be one my most useful apps.',
-		main_image: '/',
+		main_image: '/projects/aws_exam.png',
 		link: 'https://aws-exam-practice.vercel.app/',
 		appstore_link: '',
 		github: 'https://github.com/chadmuro/aws-exam-practice',
@@ -37,7 +37,7 @@ export const projects = [
 		title: 'BW Images',
 		description:
 			'When my son was born, he loved staring at black and white images. I printed out so many of them which he spent hours enjoying. I created this app so other parents can also download these images and use for their children as well.',
-		main_image: '/',
+		main_image: '/projects/bw_images.png',
 		link: 'https://bw-images.vercel.app/',
 		appstore_link: '',
 		github: 'https://github.com/chadmuro/bw-images',
