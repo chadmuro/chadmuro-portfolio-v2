@@ -53,10 +53,24 @@
 		<ul>
 			<li>
 				<a
-					class="text-green-300 hover:text-green-500"
+					class="flex items-center gap-2 text-green-300 hover:text-green-500"
 					href="https://www.credly.com/badges/918a8ea5-b1a6-4d35-a747-3d882c6eb657"
 					target="_blank"
-					rel="noopener noreferrer">AWS Certified Cloud Practitioner (2022)</a
+					rel="noopener noreferrer"
+					>AWS Certified Cloud Practitioner (2022) <svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-4 h-4"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+						/>
+					</svg></a
 				>
 			</li>
 			<li>Japanese Language Proficiency Test N3 (2018)</li>
@@ -93,7 +107,7 @@
 				>
 			{/each}
 		</div>
-		<form use:enhance method="POST" class="flex flex-col gap-2">
+		<form use:enhance method="POST" class="flex flex-col gap-2 max-w-md">
 			<label class="flex flex-col">
 				Name: <input
 					class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"

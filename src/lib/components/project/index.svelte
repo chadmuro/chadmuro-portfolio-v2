@@ -6,7 +6,7 @@
 </script>
 
 <article class="flex flex-col gap-1">
-	<h3 class="text-xl">
+	<h3 class="text-lg">
 		<a
 			class="text-green-300 hover:text-green-500"
 			href={project.link}
@@ -30,7 +30,7 @@
 			href={project.link}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="flex gap-2 items-center bg-gray-600 rounded px-2 py-1 hover:bg-gray-700"
+			class="flex gap-2 items-center bg-gray-600 rounded px-4 py-2 hover:bg-gray-700"
 			>Live
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@
 			href={project.github}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="flex gap-2 items-center bg-gray-600 rounded px-2 py-1 hover:bg-gray-700"
+			class="flex gap-2 items-center bg-gray-600 rounded px-4 py-2 hover:bg-gray-700"
 			>Source code<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
