@@ -79,7 +79,7 @@
 
 	<section class="py-8" id="side-projects">
 		<h2 class="pb-2">side projects</h2>
-		<div class="flex flex-col gap-8">
+		<div class="flex flex-col gap-10">
 			{#each projects as project}
 				<Project {project} />
 			{/each}
@@ -107,37 +107,43 @@
 				>
 			{/each}
 		</div>
-		<form use:enhance method="POST" class="flex flex-col gap-2 max-w-md">
-			<label class="flex flex-col">
-				Name: <input
-					class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
-					type="text"
-					required
-					name="name"
-					id="name"
-				/>
-			</label>
-			<label class="flex flex-col">
-				Email: <input
-					class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
-					type="email"
-					required
-					name="email"
-					id="email"
-				/>
-			</label>
-			<label class="flex flex-col">
-				Message: <textarea
-					class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
-					rows={4}
-					required
-					name="message"
-					id="message"
-				/>
-			</label>
-			<button type="submit" class="bg-green-300 rounded py-2 px-4 w-fit text-gray-800"
-				>Send message</button
-			>
-		</form>
+		{#if form?.status === 'success'}
+			<div class="bg-green-300 rounded p-2 mt-2">
+				<p class="text-gray-800">{form?.message}</p>
+			</div>
+		{:else}
+			<form use:enhance method="POST" class="flex flex-col gap-2 max-w-md mt-2">
+				<label class="flex flex-col">
+					Name: <input
+						class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
+						type="text"
+						required
+						name="name"
+						id="name"
+					/>
+				</label>
+				<label class="flex flex-col">
+					Email: <input
+						class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
+						type="email"
+						required
+						name="email"
+						id="email"
+					/>
+				</label>
+				<label class="flex flex-col">
+					Message: <textarea
+						class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
+						rows={4}
+						required
+						name="message"
+						id="message"
+					/>
+				</label>
+				<button type="submit" class="bg-green-300 rounded py-2 px-4 w-fit text-gray-800"
+					>Send message</button
+				>
+			</form>
+		{/if}
 	</section>
 </main>
