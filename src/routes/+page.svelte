@@ -1,13 +1,17 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fly, fade } from 'svelte/transition';
 	import { enhance } from '$app/forms';
 	import { techstack_badges, contact_badges } from '$lib/data/badges';
 	import Article from '$lib/components/article/index.svelte';
 	import Project from '$lib/components/project/index.svelte';
 	import { projects } from '$lib/data/projects.js';
 
+	let ready = false;
+	onMount(() => (ready = true));
+
 	export let data;
 	export let form;
-	$: console.log(form);
 </script>
 
 <header class="flex h-16 items-center">
@@ -32,9 +36,13 @@
 				</p>
 			</div>
 			<div class="flex-1">
-				<div class="rounded-full bg-green-300 h-48 w-48">
-					<img src="/chad.png" alt="Chad Murobayashi" class="overflow-hidden rounded-full" />
-				</div>
+				{#key ready}
+					<div in:fade={{ duration: 1500 }}>
+						<div in:fly={{ y: '100%', duration: 1500 }} class="rounded-full bg-green-300 h-48 w-48">
+							<img src="/chad.png" alt="Chad Murobayashi" class="overflow-hidden rounded-full" />
+						</div>
+					</div>
+				{/key}
 			</div>
 		</div>
 	</section>
