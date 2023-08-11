@@ -11,15 +11,23 @@ export const actions = {
 		const message = data.get('message');
 		const recaptcha = data.get('g-recaptcha-response');
 
-		// Validate recaptcha token
-		const recaptchaRes = await fetch(
-			`https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptcha}`,
-			{
-				method: 'POST'
+		try {
+			// Validate recaptcha token
+			const recaptchaRes = await fetch(
+				`https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptcha}`,
+				{
+					method: 'POST'
+				}
+			);
+			const recaptchaData = await recaptchaRes.json();
+			if (!recaptchaData.success || recaptchaData.score < 0.5) {
+				return {
+					status: 'error',
+					message:
+						"Oops! Your reCAPTCHA validation didn't go through successfully 🤖 Please try again later."
+				};
 			}
-		);
-		const recaptchaData = await recaptchaRes.json();
-		if (!recaptchaData.success || recaptchaData.score < 0.5) {
+		} catch (err) {
 			return {
 				status: 'error',
 				message:
