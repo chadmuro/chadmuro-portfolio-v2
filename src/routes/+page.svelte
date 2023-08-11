@@ -16,9 +16,7 @@
 </script>
 
 <svelte:head>
-	<script
-		src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_SITE_KEY}&theme=dark"
-	>
+	<script src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_SITE_KEY}">
 	</script>
 </svelte:head>
 
