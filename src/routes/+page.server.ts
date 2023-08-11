@@ -1,14 +1,31 @@
 import mail from '@sendgrid/mail';
-import { SENDGRID_API_KEY } from '$env/static/private';
+import { SENDGRID_API_KEY, RECAPTCHA_SECRET_KEY, EMAIL_TO, EMAIL_FROM } from '$env/static/private';
 
 export const actions = {
-	default: async ({ request }) => {
+	default: async ({ fetch, request }) => {
 		mail.setApiKey(SENDGRID_API_KEY);
 
 		const data = await request.formData();
 		const name = data.get('name');
 		const email = data.get('email');
 		const message = data.get('message');
+		const recaptcha = data.get('g-recaptcha-response');
+
+		// Validate recaptcha token
+		const recaptchaRes = await fetch(
+			`https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptcha}`,
+			{
+				method: 'POST'
+			}
+		);
+		const recaptchaData = await recaptchaRes.json();
+		if (!recaptchaData.success) {
+			return {
+				status: 'error',
+				message:
+					"Oops! Your reCAPTCHA validation didn't go through successfully 🤖 Please try again later."
+			};
+		}
 
 		const emailMessage = `
     Name: ${name}\r\n
@@ -17,8 +34,8 @@ export const actions = {
   `;
 
 		const emailData = {
-			to: 'chadmurodev@gmail.com',
-			from: 'chadmuroportfolio@gmail.com',
+			to: EMAIL_TO,
+			from: EMAIL_FROM,
 			subject: `New message from ${name}`,
 			text: message as string,
 			html: emailMessage.replace(/\r\n/g, '<br />')

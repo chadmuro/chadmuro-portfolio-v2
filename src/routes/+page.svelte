@@ -1,18 +1,26 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
-	import { enhance } from '$app/forms';
 	import { techstack_badges, contact_badges } from '$lib/data/badges';
 	import Article from '$lib/components/article/index.svelte';
 	import Project from '$lib/components/project/index.svelte';
 	import { projects } from '$lib/data/projects.js';
+	import recaptchaEnhance from '$lib/recaptchaEnhance';
+	import { PUBLIC_RECAPTCHA_SITE_KEY } from '$env/static/public';
 
 	let ready = false;
 	onMount(() => (ready = true));
 
 	export let data;
-	export let form;
+	let formResponse: { status: boolean; message: string } | null = null;
 </script>
+
+<svelte:head>
+	<script
+		src="https://www.google.com/recaptcha/api.js?render={PUBLIC_RECAPTCHA_SITE_KEY}&theme=dark"
+	>
+	</script>
+</svelte:head>
 
 <header class="flex h-16 items-center">
 	<nav>
@@ -115,12 +123,24 @@
 				>
 			{/each}
 		</div>
-		{#if form?.status === 'success'}
-			<div class="bg-green-300 rounded p-2 mt-2">
-				<p class="text-gray-800">{form?.message}</p>
+		{#if formResponse}
+			<div class={`${formResponse.status ? 'bg-green-300' : 'bg-red-300'} rounded p-2 mt-2`}>
+				<p class="text-gray-800">{formResponse.message}</p>
 			</div>
 		{:else}
-			<form use:enhance method="POST" class="flex flex-col gap-2 max-w-md mt-2">
+			<form
+				use:recaptchaEnhance={{
+					siteKey: PUBLIC_RECAPTCHA_SITE_KEY,
+					func:
+						({ formData }) =>
+						({ result }) => {
+							// @ts-ignore
+							formResponse = { status: result.data.status, message: result.data.message };
+						}
+				}}
+				method="POST"
+				class="flex flex-col gap-2 max-w-md mt-2"
+			>
 				<label class="flex flex-col">
 					Name: <input
 						class="bg-gray-800 focus:bg-gray-600 px-2 py-1 rounded focus:border-green-300 border-2 focus:outline-none caret-green-300"
