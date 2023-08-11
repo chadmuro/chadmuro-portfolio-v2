@@ -19,7 +19,7 @@ export const actions = {
 			}
 		);
 		const recaptchaData = await recaptchaRes.json();
-		if (!recaptchaData.success) {
+		if (!recaptchaData.success || recaptchaData.score < 0.5) {
 			return {
 				status: 'error',
 				message:

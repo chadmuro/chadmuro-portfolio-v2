@@ -12,7 +12,7 @@
 	onMount(() => (ready = true));
 
 	export let data;
-	let formResponse: { status: boolean; message: string } | null = null;
+	let formResponse: { status: 'success' | 'error'; message: string } | null = null;
 </script>
 
 <svelte:head>
@@ -122,7 +122,11 @@
 			{/each}
 		</div>
 		{#if formResponse}
-			<div class={`${formResponse.status ? 'bg-green-300' : 'bg-red-300'} rounded p-2 mt-2`}>
+			<div
+				class={`${
+					formResponse.status === 'error' ? 'bg-red-300' : 'bg-green-300'
+				} rounded p-2 mt-2`}
+			>
 				<p class="text-gray-800">{formResponse.message}</p>
 			</div>
 		{:else}
