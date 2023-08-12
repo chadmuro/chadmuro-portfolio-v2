@@ -170,6 +170,16 @@
 						id="message"
 					/>
 				</label>
+				<p class="text-xs">
+					This site is protected by reCAPTCHA and the Google
+					<a class="text-green-300 hover:text-green-500" href="https://policies.google.com/privacy"
+						>Privacy Policy</a
+					>
+					and
+					<a class="text-green-300 hover:text-green-500" href="https://policies.google.com/terms"
+						>Terms of Service</a
+					> apply.
+				</p>
 				<button type="submit" class="bg-green-300 rounded py-2 px-4 w-fit text-gray-800"
 					>Send message</button
 				>
