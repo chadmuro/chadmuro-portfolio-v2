@@ -1,6 +1,17 @@
 export const projects = [
 	{
 		id: 1,
+		title: 'JLPT N2 Study',
+		description:
+			'Over 600 downloads! A mobile app built with React Native, Expo, and TypeScript. It is currently available to download for free on the App Store. This app will help you study vocabulary, grammar, and kanji to pass the N2 Japanese Language Proficiency Test.',
+		main_image: '/projects/jlpt_study.png',
+		link: 'https://jlpt-n2-study.framer.website/',
+		appstore_link: 'https://apps.apple.com/app/jlpt-n2-study/id6467766242',
+		github: 'https://github.com/chadmuro/jlpt-study',
+		tags: ['React Native', 'TypeScript', 'Expo', 'Expo Router', 'SQLite', 'WatermelonDB', 'Tamagui']
+	},
+	{
+		id: 2,
 		title: 'Mainichi Habits',
 		description:
 			'My first mobile app built with React Native, Expo, and TypeScript. It is currently available to download for free on the App Store. This app will help you build and track your daily and weekly habits.',
@@ -10,17 +21,7 @@ export const projects = [
 		github: 'https://github.com/chadmuro/mainichi-habits',
 		tags: ['React Native', 'TypeScript', 'Expo', 'Expo Router', 'SQLite', 'Hookstate']
 	},
-	{
-		id: 2,
-		title: 'JLPT N2 Study',
-		description:
-			'A mobile app built with React Native, Expo, and TypeScript. It is currently available to download for free on the App Store. This app will help you study vocabulary to pass the N2 Japanese Language Proficiency Test.',
-		main_image: '/projects/jlpt_study.png',
-		link: 'https://jlpt-n2-study.framer.website/',
-		appstore_link: 'https://apps.apple.com/app/jlpt-n2-study/id6467766242',
-		github: 'https://github.com/chadmuro/jlpt-study',
-		tags: ['React Native', 'TypeScript', 'Expo', 'Expo Router', 'SQLite', 'WatermelonDB', 'Tamagui']
-	},
+
 	{
 		id: 3,
 		title: 'NBA Hot Takes',
@@ -53,15 +54,15 @@ export const projects = [
 		appstore_link: '',
 		github: 'https://github.com/chadmuro/bw-images',
 		tags: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'HeadlessUI', 'FontAwesome']
+	},
+	{
+		id: 6,
+		title: 'JLPT Vocabulary',
+		description:
+			'I was able to update the codebase from the JLPT N2 Study app to create 4 separate, more polished apps (N1, N2, N3, and N4). These app will help you study vocabulary to pass the Japanese Language Proficiency Test.',
+		main_image: '/projects/jlpt_vocab.png',
+		link: 'https://jlptvocab.vercel.app/',
+		github: 'https://github.com/chadmuro/jlpt-vocab',
+		tags: ['React Native', 'TypeScript', 'Expo', 'Expo Router', 'SQLite', 'WatermelonDB', 'Tamagui']
 	}
-	// {
-	// 	id: 5,
-	// 	title: 'Chadmuro Portfolio v1',
-	// 	description: 'The first version of my portfolio built way back in 2021.',
-	// 	main_image: '/',
-	// 	link: '',
-	// 	appstore_link: '',
-	// 	github: '',
-	// 	tags: ['Next.js', 'React', 'JavaScript', 'TailwindCSS', 'Framer Motion', 'Prismic', 'Sendgrid']
-	// }
 ];
