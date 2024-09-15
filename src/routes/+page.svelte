@@ -65,6 +65,7 @@
 	<section class="py-8">
 		<h2 class="pb-2">certifications</h2>
 		<ul>
+			<li>Japanese Language Proficiency Test N2 (2024)</li>
 			<li>
 				<a
 					class="flex items-center gap-2 text-green-300 hover:text-green-500"

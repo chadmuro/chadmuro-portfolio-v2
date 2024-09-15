@@ -3,7 +3,7 @@ export const projects = [
 		id: 1,
 		title: 'JLPT N2 Study',
 		description:
-			'Over 600 downloads! A mobile app built with React Native, Expo, and TypeScript. It is currently available to download for free on the App Store. This app will help you study vocabulary, grammar, and kanji to pass the N2 Japanese Language Proficiency Test.',
+			'Over 1200 downloads! A mobile app built with React Native, Expo, and TypeScript. It is currently available to download for free on the App Store. This app will help you study vocabulary, grammar, and kanji to pass the N2 Japanese Language Proficiency Test.',
 		main_image: '/projects/jlpt_study.png',
 		link: 'https://jlpt-n2-study.framer.website/',
 		appstore_link: 'https://apps.apple.com/app/jlpt-n2-study/id6467766242',
@@ -24,14 +24,23 @@ export const projects = [
 
 	{
 		id: 3,
-		title: 'NBA Hot Takes',
+		title: 'NBA, Ranked',
 		description:
-			'There is nothing I love more than following the NBA and hearing ridiculous takes. I created this app for all NBA lovers to share their hottest takes.',
-		main_image: '/projects/nba_hottakes.png',
-		link: 'https://nba-hottakes.vercel.app/',
+			'A daily NBA game where users sort random NBA players from a certain season based on a specipic stat. I created this app for all NBA lovers to test their knowledge and have fun.',
+		main_image: '/projects/nba_ranked.png',
+		link: 'https://nbaranked.vercel.app/',
 		appstore_link: '',
-		github: 'https://github.com/chadmuro/nba-hottakes',
-		tags: ['Next.js', 'React', 'TypeScript', 'Supabase', 'TailwindCSS', 'DaisyUI']
+		github: 'https://github.com/chadmuro/nba-ranked',
+		tags: [
+			'Next.js',
+			'React',
+			'TypeScript',
+			'Convex',
+			'Cheerio',
+			'TailwindCSS',
+			'shadcn',
+			'Framer Motion'
+		]
 	},
 	{
 		id: 4,
@@ -62,6 +71,7 @@ export const projects = [
 			'I was able to update the codebase from the JLPT N2 Study app to create 4 separate, more polished apps (N1, N2, N3, and N4). These app will help you study vocabulary to pass the Japanese Language Proficiency Test.',
 		main_image: '/projects/jlpt_vocab.png',
 		link: 'https://jlptvocab.vercel.app/',
+		appstore_link: '',
 		github: 'https://github.com/chadmuro/jlpt-vocab',
 		tags: ['React Native', 'TypeScript', 'Expo', 'Expo Router', 'SQLite', 'WatermelonDB', 'Tamagui']
 	}
